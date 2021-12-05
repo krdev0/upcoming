@@ -16,9 +16,11 @@ app.use(express.static('assets'));
 app.get('/', function (req, res) {
     const dataFile = fs.readFileSync('data/data.json');
     const eventsData = JSON.parse(dataFile);
+    const currentDate = Date.now();
 
     res.render('index', {
-        events: eventsData
+        events: eventsData,
+        currentDate: currentDate
     });
 });
 

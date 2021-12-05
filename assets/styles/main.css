@@ -44,3 +44,26 @@ form input:focus {
 button {
     cursor: pointer;
 }
+
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event {
+    width: 100%;
+    margin:10px;
+    border:1px solid black;
+    padding:10px;
+    text-align: center;
+}
+
+.event__title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.event__date {
+    
+}

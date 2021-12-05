@@ -15,11 +15,12 @@
         <section class="main">
             <div class="main__inner">
                 <div class="events">
+                    <%= currentDate %>
                     <% for (const event of events) { %>
                         <div class="event">
-                            <p>Name: <%= event.name %>
+                            <p class="event__title"><%= event.name %>
                             </p>
-                            <p>Date: <%= event.date %>
+                            <p class="event__date"><%= event.date %>
                             </p>
                         </div>
                         <% } %>
