@@ -16,11 +16,25 @@ app.use(express.static('assets'));
 app.get('/', function (req, res) {
     const dataFile = fs.readFileSync('data/data.json');
     const eventsData = JSON.parse(dataFile);
-    const currentDate = Date.now();
+
+    const date = new Date();
+    const currentMonth = date.getMonth();
+
+    let eventsCurrentMonth = [];
+
+    //Loop over events and push to array only if the date corresponds to current date
+    for (const data of eventsData) {
+        console.log(data.date);
+    }
+
+    const months = Array.from({ length: 12 }, (item, i) => {
+        return new Date(0, i).toLocaleString('en-US', { month: 'long' })
+    });
 
     res.render('index', {
         events: eventsData,
-        currentDate: currentDate
+        months: months,
+        currentMonth: months[currentMonth]
     });
 });
 
