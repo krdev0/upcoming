@@ -3,6 +3,8 @@ const fs = require('fs');
 
 const express = require('express');
 const app = express();
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // Adding ejs as view engine and adding template file path
 app.set('views', path.join(__dirname, 'views'));
@@ -12,11 +14,29 @@ app.set('view engine', 'ejs');
 app.use(express.static('assets'));
 
 app.get('/', function (req, res) {
-    res.render('index');
-})
+    const dataFile = fs.readFileSync('data/data.json');
+    const eventsData = JSON.parse(dataFile);
+
+    res.render('index', {
+        events: eventsData
+    });
+});
 
 app.post('/', function (req, res) {
-    res.redirect('/asd');
-})
+    const event = req.body;
+
+    const dataFile = fs.readFileSync('data/data.json');
+    const eventsData = JSON.parse(dataFile);
+
+    eventsData.push(event);
+
+    fs.writeFileSync('data/data.json', JSON.stringify(eventsData));
+
+    res.redirect('confirm');
+});
+
+app.get('/confirm', function (req, res) {
+    res.render('confirm');
+});
 
 app.listen(3000);

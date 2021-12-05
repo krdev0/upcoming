@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('./partials/head') %>
 </head>
-<body>
-    <aside>
-        <form action="/" method="POST">
-            <input type="text">
-            <input type="date">
-            <button type="submit">Submit</button>
-        </form>
+
+<body class="page">
+    <div class="page__inner">
+        <div class="header">
+            <div class="header__add-new">
+                <button id="add-record">Add New</button>
+            </div>
+        </div>
+        <section class="main">
+            <div class="main__inner">
+                <div class="events">
+                    <% for (const event of events) { %>
+                        <div class="event">
+                            <p>Name: <%= event.name %>
+                            </p>
+                            <p>Date: <%= event.date %>
+                            </p>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="backdrop"></div>
+    <aside id="form">
+        <%- include('./partials/form') %>
     </aside>
 </body>
+
 </html>
