@@ -19,13 +19,26 @@ app.get('/', function (req, res) {
 
     const date = new Date();
     const currentMonth = date.getMonth();
+    const currentDate = date.getDate();
 
-    let eventsCurrentMonth = [];
+    const currentMonthEvents = [];
 
     //Loop over events and push to array only if the date corresponds to current date
-    for (const data of eventsData) {
-        console.log(data.date);
-    }
+    // for (const data of eventsData) {
+    //     const splitDate = (data.date).split("-");
+        
+    //     data.year = splitDate[0];
+    //     data.month = splitDate[1];
+    //     data.day = splitDate[2];
+
+    //     console.log(data);
+    // }
+
+    // for (const [index, events] of eventsData.entries()) {
+    //     console.log(events);
+    //     const splitDate = (events.date).split("-");
+    // }
+
 
     const months = Array.from({ length: 12 }, (item, i) => {
         return new Date(0, i).toLocaleString('en-US', { month: 'long' })
@@ -34,7 +47,7 @@ app.get('/', function (req, res) {
     res.render('index', {
         events: eventsData,
         months: months,
-        currentMonth: months[currentMonth]
+        currentMonth: months[currentMonth],
     });
 });
 
