@@ -17,6 +17,10 @@ app.get('/', function (req, res) {
     const dataFile = fs.readFileSync('data/data.json');
     const eventsData = JSON.parse(dataFile);
 
+    const months = Array.from({ length: 12 }, (item, i) => {
+        return new Date(0, i).toLocaleString('en-US', { month: 'long' })
+    });
+
     const date = new Date();
     const currentMonth = date.getMonth();
     const currentDate = date.getDate();
@@ -24,28 +28,21 @@ app.get('/', function (req, res) {
     const currentMonthEvents = [];
 
     //Loop over events and push to array only if the date corresponds to current date
-    // for (const data of eventsData) {
-    //     const splitDate = (data.date).split("-");
-        
-    //     data.year = splitDate[0];
-    //     data.month = splitDate[1];
-    //     data.day = splitDate[2];
+    for (const event of eventsData) {
+        const splitDate = (event.date).split("-");
 
-    //     console.log(data);
-    // }
+        event.year = Number(splitDate[0]);
+        event.month = Number(splitDate[1]) - 1;
+        event.day = Number(splitDate[2]);
 
-    // for (const [index, events] of eventsData.entries()) {
-    //     console.log(events);
-    //     const splitDate = (events.date).split("-");
-    // }
+        if (currentMonth === event.month && currentDate < event.day) {
+            currentMonthEvents.push(event);
+        }
+    }
 
-
-    const months = Array.from({ length: 12 }, (item, i) => {
-        return new Date(0, i).toLocaleString('en-US', { month: 'long' })
-    });
 
     res.render('index', {
-        events: eventsData,
+        events: currentMonthEvents,
         months: months,
         currentMonth: months[currentMonth],
     });

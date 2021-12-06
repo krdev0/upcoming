@@ -1,62 +1,104 @@
 /* Shared */
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+body {
+    background: #56CCF2;
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
+}
+
+h1 {
+    margin: 20px 0;
+    text-align: center;
 }
 
 /* Backdrop */
 #backdrop {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display:none;
-}
-
-#form {
-    position: absolute;
-    left:50%;
-    top:50%;
-    background-color: rgb(58, 138, 184);
-    transform: translate(-50%, -50%);
     display: none;
 }
 
+/* ================== FORM STYLES ================ */
+
+#form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: rgb(58, 138, 184);
+    transform: translate(-50%, -50%);
+    display: none;
+    width:500px;
+    border-radius: 5px;
+}
+
 form {
-    padding:10px;
+    padding: 10px;
+}
+
+.form-control {
+    margin: 10px 0;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
 }
 
 form input {
-    width:100%;
-    padding:0;
-    margin:0;
-    border:none;
-    outline:none;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin: 0;
+    border: none;
+    outline: none;
 }
 
 form input:focus {
     outline: none;
-    border:none;
+    border: none;
 }
 
 button {
     cursor: pointer;
 }
 
+
+/* ================== HEADER ================ */
+
+.header__add-new {
+    margin: 20px 0;
+}
+
+/* ================== EVENT STYLES ================ */
 .events {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .event {
-    width: 100%;
-    margin:10px;
-    border:1px solid black;
-    padding:10px;
-    text-align: center;
+    /* flex: 0 0 33%; */
+}
+
+.event-wrap {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / 30%);
+    border-radius: 5px;
 }
 
 .event__title {
@@ -64,6 +106,4 @@ button {
     font-size: 20px;
 }
 
-.event__date {
-    
-}
+.event__date {}

@@ -8,24 +8,32 @@
 <body class="page">
     <div class="page__inner">
         <div class="header">
-            <div class="header__add-new">
-                <button id="add-record">Add New</button>
+            <div class="container">
+                <div class="header__add-new">
+                    <button id="add-record">Add New</button>
+                </div>
             </div>
         </div>
         <section class="main">
             <div class="main__inner">
-                <div class="events">
-                    <%= currentMonth %>
+                <div class="container">
+                    <h1>
+                        Current month celebrations: <%= currentMonth %>
+                    </h1>
+                    <div class="events">
                         <% for (const event of events) { %>
                             <div class="event">
-                                <p class="event__title">
-                                    <%= event.name %>
-                                </p>
-                                <p class="event__date">
-                                    <%= event.date %>
-                                </p>
+                                <div class="event-wrap">
+                                    <p class="event__title">
+                                        <%= event.name %>
+                                    </p>
+                                    <p class="event__date">
+                                        <%= event.date %>
+                                    </p>
+                                </div>
                             </div>
                             <% } %>
+                    </div>
                 </div>
             </div>
         </section>

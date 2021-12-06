@@ -1,7 +1,22 @@
 <form action="/" method="POST">
-    <label for="name">Enter event name</label>
-    <input type="text" id="name" name="name" autocomplete="off">
-    <label for="date">Enter event date</label>
-    <input type="date" id="date" name="date">
+    <div class="form-control">
+        <label for="name">Enter event name</label>
+        <input type="text" id="name" name="name" autocomplete="off">
+    </div>
+    
+    <div class="form-control">
+        <label for="date">Enter event date</label>
+        <input type="date" id="date" name="date">
+    </div>
+
+    <div class="form-control">
+        <label for="type">Select type</label>
+        <select name="type" id="type">
+            <option value="nameday">Nameday</option>
+            <option value="birthday">Birthday</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    
     <button type="submit">Submit</button>
 </form>
