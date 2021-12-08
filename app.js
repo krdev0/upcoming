@@ -50,6 +50,7 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
     const event = req.body;
+    console.log(event);
 
     const dataFile = fs.readFileSync('data/data.json');
     const eventsData = JSON.parse(dataFile);
