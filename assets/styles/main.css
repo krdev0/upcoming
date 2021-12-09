@@ -44,6 +44,10 @@ h1 {
     border-radius: 5px;
 }
 
+#nameday-control, #other-control {
+    display: none;
+}
+
 form {
     padding: 10px;
 }

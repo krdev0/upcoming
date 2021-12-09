@@ -1,21 +1,32 @@
 <form action="/" method="POST">
     <div class="form-control">
-        <label for="type">Select type</label>
-        <select name="type" id="type">
-            <option value="nameday">Nameday</option>
+        <label for="event-type">Select type</label>
+        <select name="event-type" id="event-type">
             <option value="birthday">Birthday</option>
+            <option value="nameday">Nameday</option>
             <option value="other">Other</option>
         </select>
     </div>
 
-    <div class="form-control" id="event-name-control">
-        <label for="event-name">Enter event name</label>
-        <input type="text" id="event-name" name="event-name" autocomplete="off">
+    <div class="form-control" id="birthday-control">
+        <label for="birthday-person">Birthday</label>
+        <input type="text" id="birthday-person" name="birthday-person" placeholder="Enter name" autocomplete="off">
+        <label for="birthday-date"></label>
+        <input type="date" name="birthday-date" id="birthday-date">
     </div>
-    
-    <div class="form-control" id="person-name-control">
-        <label for="person-name">Enter person name</label>
-        <input type="text" id="person-name" name="person-name" autocomplete="off">
+
+    <div class="form-control" id="nameday-control">
+        <label for="nameday-person">Nameday</label>
+        <input type="text" id="nameday-person" name="nameday-person" placeholder="Enter name" autocomplete="off">
+        <label for="nameday-date"></label>
+        <input type="date" name="nameday-date" id="nameday-date">
+    </div>
+
+    <div class="form-control" id="other-control">
+        <label for="other-person">Other Event</label>
+        <input type="text" id="other-person" name="other-person" autocomplete="off">
+        <label for="other-date"></label>
+        <input type="date" name="other-date" id="other-date">
     </div>
 
     <button type="submit">Submit</button>

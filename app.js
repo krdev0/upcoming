@@ -35,7 +35,7 @@ app.get('/', function (req, res) {
         event.month = Number(splitDate[1]) - 1;
         event.day = Number(splitDate[2]);
 
-        if (currentMonth === event.month && currentDate < event.day) {
+        if (currentMonth === event.month && currentDate <= event.day) {
             currentMonthEvents.push(event);
         }
     }
