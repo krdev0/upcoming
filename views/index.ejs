@@ -10,7 +10,7 @@
         <div class="header">
             <div class="container">
                 <div class="header__add-new">
-                    <button id="add-record">Add New</button>
+                    <button id="add-record">Add New Event</button>
                 </div>
             </div>
         </div>
@@ -22,14 +22,21 @@
                     </h1>
                     <div class="events">
                         <% for (const event of events) { %>
-                            <div class="event">
+                            <div class="event <%= event.type %>">
+                                <span class="type"><%= event.type %></span>
                                 <div class="event-wrap">
+                                    <div class="date">
+                                        <span class="date__day">
+                                            <%= event.day %>
+                                        </span>
+                                        <span class="date__month">
+                                            <%= months[event.month - 1] %>
+                                        </span>
+                                    </div>
                                     <p class="event__title">
-                                        <%= event.name %>
+                                        <%= event.information %>
                                     </p>
-                                    <p class="event__date">
-                                        <%= event.date %>
-                                    </p>
+                                    
                                 </div>
                             </div>
                             <% } %>

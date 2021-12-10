@@ -1,1 +1,1 @@
-[{"name":"Aunt nameday","date":"2021-12-09"},{"name":"Matiss birthday","date":"2021-12-29"},{"name":"Mom nameday","date":"2021-12-28"}]
+[{"type":"nameday","information":"Mom nameday","date":"2021-12-28"},{"type":"birthday","information":"Matiss Miknis Birthday","date":"2021-12-29"},{"type":"nameday","information":"Davids nameday","date":"2021-12-30"}]

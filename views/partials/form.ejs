@@ -1,32 +1,21 @@
 <form action="/" method="POST">
     <div class="form-control">
-        <label for="event-type">Select type</label>
-        <select name="event-type" id="event-type">
+        <label for="type">Select type</label>
+        <select name="type" id="type">
             <option value="birthday">Birthday</option>
             <option value="nameday">Nameday</option>
             <option value="other">Other</option>
         </select>
     </div>
 
-    <div class="form-control" id="birthday-control">
-        <label for="birthday-person">Birthday</label>
-        <input type="text" id="birthday-person" name="birthday-person" placeholder="Enter name" autocomplete="off">
-        <label for="birthday-date"></label>
-        <input type="date" name="birthday-date" id="birthday-date">
+    <div class="form-control">
+        <label for="information">Event Information</label>
+        <input type="text" name="information" id="information">
     </div>
 
-    <div class="form-control" id="nameday-control">
-        <label for="nameday-person">Nameday</label>
-        <input type="text" id="nameday-person" name="nameday-person" placeholder="Enter name" autocomplete="off">
-        <label for="nameday-date"></label>
-        <input type="date" name="nameday-date" id="nameday-date">
-    </div>
-
-    <div class="form-control" id="other-control">
-        <label for="other-person">Other Event</label>
-        <input type="text" id="other-person" name="other-person" autocomplete="off">
-        <label for="other-date"></label>
-        <input type="date" name="other-date" id="other-date">
+    <div class="form-control">
+        <label for="date">Select type</label>
+        <input type="date" name="date" id="date">
     </div>
 
     <button type="submit">Submit</button>

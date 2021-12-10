@@ -7,12 +7,13 @@
 .container {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 body {
-    background: #56CCF2;
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
-    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    font-family: 'Oswald', sans-serif;
+    color: rgb(240, 240, 240);
+    background: #2e2c39;
 }
 
 h1 {
@@ -40,7 +41,7 @@ h1 {
     background-color: rgb(58, 138, 184);
     transform: translate(-50%, -50%);
     display: none;
-    width:500px;
+    width: 500px;
     border-radius: 5px;
 }
 
@@ -87,27 +88,11 @@ button {
     margin: 20px 0;
 }
 
-/* ================== EVENT STYLES ================ */
-.events {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.event {
-    /* flex: 0 0 33%; */
-}
-
-.event-wrap {
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 0 8px 0 rgb(0 0 0 / 30%);
+button {
+    border:none;
+    padding:5px 10px;
+    background-color: darkolivegreen;
     border-radius: 5px;
+    color:white;
+    font-size: 14px;
 }
-
-.event__title {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.event__date {}

@@ -22,7 +22,9 @@ app.get('/', function (req, res) {
     });
 
     const date = new Date();
-    const currentMonth = date.getMonth();
+    const currentMonth = date.getMonth() + 1;
+
+    console.log(currentMonth);
     const currentDate = date.getDate();
 
     const currentMonthEvents = [];
@@ -31,8 +33,8 @@ app.get('/', function (req, res) {
     for (const event of eventsData) {
         const splitDate = (event.date).split("-");
 
-        event.year = Number(splitDate[0]);
-        event.month = Number(splitDate[1]) - 1;
+        // event.year = Number(splitDate[0]);
+        event.month = Number(splitDate[1]);
         event.day = Number(splitDate[2]);
 
         if (currentMonth === event.month && currentDate <= event.day) {
@@ -40,17 +42,17 @@ app.get('/', function (req, res) {
         }
     }
 
+    currentMonthEvents.sort((a, b) => parseFloat(a.day) - parseFloat(b.day));
 
     res.render('index', {
         events: currentMonthEvents,
         months: months,
-        currentMonth: months[currentMonth],
+        currentMonth: months[currentMonth - 1],
     });
 });
 
 app.post('/', function (req, res) {
     const event = req.body;
-    console.log(event);
 
     const dataFile = fs.readFileSync('data/data.json');
     const eventsData = JSON.parse(dataFile);
