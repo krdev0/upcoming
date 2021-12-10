@@ -1,6 +1,6 @@
 <form action="/" method="POST">
     <div class="form-control">
-        <label for="type">Select type</label>
+        <label for="type">Select Event Type</label>
         <select name="type" id="type">
             <option value="birthday">Birthday</option>
             <option value="nameday">Nameday</option>
@@ -9,14 +9,14 @@
     </div>
 
     <div class="form-control">
-        <label for="information">Event Information</label>
-        <input type="text" name="information" id="information">
+        <input type="text" name="information" id="information" placeholder="Event Information" autocomplete="off">
     </div>
 
     <div class="form-control">
-        <label for="date">Select type</label>
         <input type="date" name="date" id="date">
     </div>
-
-    <button type="submit">Submit</button>
+    
+    <div class="submit-button">
+        <button type="submit">Submit</button>
+    </div>
 </form>

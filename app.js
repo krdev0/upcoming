@@ -23,8 +23,6 @@ app.get('/', function (req, res) {
 
     const date = new Date();
     const currentMonth = date.getMonth() + 1;
-
-    console.log(currentMonth);
     const currentDate = date.getDate();
 
     const currentMonthEvents = [];
